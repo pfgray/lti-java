@@ -1,4 +1,5 @@
 import com.github.sbt.jacoco.JacocoPlugin.autoImport.jacocoIncludes
+import sbt.Keys.publishTo
 
 lazy val commonSettings = Seq(
   organization := "net.paulgray",
@@ -7,7 +8,15 @@ lazy val commonSettings = Seq(
   autoScalaLibrary := false,
   publishMavenStyle := true,
   testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a")),
-  jacocoExcludes in Test := Seq("*Builder*")
+  jacocoExcludes in Test := Seq("*Builder*"),
+  publishTo := {
+    val v = version.value
+    val nexus = "https://oss.sonatype.org/"
+    if (v.trim.endsWith("SNAPSHOT"))
+      Some("snapshots" at nexus + "content/repositories/snapshots")
+    else
+      Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  }
 )
 
 publishArtifact := false
@@ -50,9 +59,13 @@ lazy val spring = (project in file("spring"))
     )
   )
 
-
 enablePlugins(GitBookPlugin)
 
 sourceDirectory in GitBook := baseDirectory.value / "gitbook"
+
+publishMavenStyle := true
+
+// don't attempt to publish an artifact for the root project (since there is none)
+skip in publish := true
 
 // jacocoReportSettings := JacocoReportSettings(...)
