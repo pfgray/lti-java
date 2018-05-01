@@ -1,0 +1,546 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>The Launch · LTI Java</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="launch.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="launch.html">
+            
+                <a href="launch.html">
+            
+                    
+                    The Launch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="launch.html">
+            
+                <a href="launch.html#signing">
+            
+                    
+                    Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="launch.html">
+            
+                <a href="launch.html#signature-verification">
+            
+                    
+                    Signature Verification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="launch.html">
+            
+                <a href="launch.html#launch-parameters">
+            
+                    
+                    Launch Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="launch.html">
+            
+                <a href="launch.html#extractingvalidating-information-from-a-launch">
+            
+                    
+                    Extracting Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="grades.html">
+            
+                <a href="grades.html">
+            
+                    
+                    Grades
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="grades.html">
+            
+                <a href="grades.html#updating-grades">
+            
+                    
+                    Updating Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="grades.html">
+            
+                <a href="grades.html#reading-grades">
+            
+                    
+                    Reading Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="grades.html">
+            
+                <a href="grades.html#deleting-grades">
+            
+                    
+                    Deleting Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="content.html">
+            
+                <a href="content.html">
+            
+                    
+                    Content
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >The Launch</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="the-launch">The Launch</h2>
+<p>One capability that LTI enables is SSO (Single Sign-on). This means that users who are signed into the consumer, can follow a link to the provider, and be authenticated automatically, without having to provide an additional set of credentials.  </p>
+<p>This is accomplished via the <strong>LTI Launch</strong>, in which the consumer builds a request containing the user&apos;s information (name, role, etc), and gives it to the user. The user then sends the request to the provider, where the provider reads the name and role and provides an interface for for it&apos;s capabilities.</p>
+<h3 id="signing">Signing</h3>
+<p>Since the launch request comes from the user&apos;s client, the provider cannot trust that the information in the request is valid by itself. For example: When the consumer builds a request and sends it to a student. The student can change their role to &quot;instructor,&quot; which could  cause the the tool the give that student elevated rights.</p>
+<p><strong>Consumers</strong> can sign a list of parameters using an instance of <code>LtiOauthSigner</code>:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> net.paulgray.lti.launch.LtiSigner
+
+<span class="hljs-comment">// ...</span>
+
+LtiSigner signer = <span class="hljs-keyword">new</span> LtiOauthSigner();
+Map&lt;String, String&gt; parameters = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+...
+
+Map&lt;String, String&gt; signedParameters = signer.sign(parameters.entrySet(), key, secret, url, <span class="hljs-string">&quot;POST&quot;</span>);
+</code></pre>
+<p>These parameters can be returned to the client and inserted into an auto-submittted form. Here&apos;s an example using JSP:</p>
+<pre><code>&lt;form action=&quot;${launchUrl}&quot; method=&quot;POST&quot;&gt;
+  &lt;c:forEach items=&quot;${parameters}&quot; var=&quot;param&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;${param.key}&quot; value=&quot;${param.value}&quot; /&gt;
+  &lt;/c:forEach&gt;
+  &lt;input type=&quot;submit&quot;&gt;Launch Tool&lt;/input&gt;
+&lt;/form&gt;
+</code></pre><h3 id="signature-verification">Signature Verification</h3>
+<p>In order for the <strong>provider</strong> to verify that the user&apos;s  request contains valid information, and that it wasn&apos;t changed by the user, the provider and consumer must agree on a key and secret beforehand that the consumer will sign launch requests with. When the consumer builds the request, they take the secret that is only known by it and the provider and uses it to compute a signature for the information in the request. The compiled request now contains the user&apos;s information <em>and</em> the signature based on that information.</p>
+<p>When the user sends the request to the provider, the provider takes the information in the request, and the secret that it arranged before hand with the consumer, and applies the same process to compute the signatures. If the signature computed by the provider matches the one included in the request, then the provider can trust that they information came from the consumer. If the user had tampered with the information in the request, then the signature computed by the provider would not match the one in the request, and the provider would know not to trust it. The user also cannot recompute a new signature for their modified information because they don&apos;t know the secret.</p>
+<p>As a <strong>provider</strong>, I can verify a set of parameters using an instance of <code>LtiOauthVerifier</code>:</p>
+<pre><code class="lang-java">LtiVerifier verifier = <span class="hljs-keyword">new</span> LtiOauthVerifier();
+Map&lt;String, String&gt; parameters = request.getParameters();
+
+<span class="hljs-comment">// retrieve the stored secret for the key in the request:</span>
+String key = parameters.get(<span class="hljs-string">&quot;oauth_consumer_key&quot;</span>);
+String secret = keyService.fetchSecretForKey(key);
+
+LtiVerificationRequest = verifier.verifyParameters(parameters.entrySet(), url, <span class="hljs-string">&quot;POST&quot;</span>, secret);
+</code></pre>
+<h3 id="launch-parameters">Launch Parameters</h3>
+<p>The LTI launch includes information about the user and the context of where the user came from (i.e. did the user click on the link from within a course? or from within their profile page, etc). This allows the tool to provide functionality pertaining to that information. For example, a tool could provide a chat system for every course, matching users that come from the same course together.</p>
+<p>The full list of LTI parameters in the standard is <em>(note: some consumers may provide additional parameters based on custom functionality)</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lti_message_type</td>
+<td>This indicates that this is a Basic LTI Launch Message.  This allows a TP to accept a number of different LTI message types at the same launch URL.  This parameter is required.</td>
+</tr>
+<tr>
+<td>lti_version</td>
+<td>This indicates which version of the specification is being used for this particular message.  This parameter is required.</td>
+</tr>
+<tr>
+<td>resource_link_id</td>
+<td>This is an opaque unique identifier that the TC guarantees will be unique within the TC for every placement of the link.   If the tool / activity is placed multiple times in the same context, each of those placements will be distinct. This value will also change if the item is exported from one system or context and imported into another system or context.  This parameter is required.</td>
+</tr>
+<tr>
+<td>resource_link_title</td>
+<td>A title for the resource. This is the clickable text that appears in the link. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>resource_link_description</td>
+<td>A plain text description of the link&#x2019;s destination, suitable for display alongside the link. Typically no more than several lines long. This parameter is optional.</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Uniquely identifies the user.  This should not contain any identifying information for the user.  Best practice is that this field should be a TC-generated long-term &#x201C;primary key&#x201D; to the user record &#x2013; not the &#x201C;logical key&quot;.  This parameter is recommended.</td>
+</tr>
+<tr>
+<td>user_image</td>
+<td>This attribute specifies the URI for an image of the user who launched this request.  This image is suitable for use as a &quot;profile picture&quot; or an avatar representing the user.  This parameter is optional.</td>
+</tr>
+<tr>
+<td>roles</td>
+<td>A comma-separated list of URN values for roles.  If this list is non-empty, it should contain at least one role from the LIS System Role, LIS Institution Role, or LIS Context Role vocabularies (See Appendix A).  The assumed namespace of these URNs is the LIS vocabulary of LIS Context Roles so TCs can use the handles when the intent is to refer to an LIS context role.  If the TC wants to include a role from another namespace, a fully-qualified URN should be used.  Usage of roles from non-LIS vocabularies is discouraged as it may limit interoperability.   This parameter is recommended.</td>
+</tr>
+<tr>
+<td>lis_person_name_given</td>
+<td>The first name of the launching user.</td>
+</tr>
+<tr>
+<td>lis_person_name_family</td>
+<td>The last name of the launching user.</td>
+</tr>
+<tr>
+<td>lis_person_name_full</td>
+<td>The full name of the launching user</td>
+</tr>
+<tr>
+<td>lis_person_contact_email_primary</td>
+<td>The primary email of the launching user.</td>
+</tr>
+<tr>
+<td>context_id</td>
+<td>This is an opaque identifier that uniquely identifies the context that contains the link being launched. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>context_type</td>
+<td>This string is a comma-separated list of URN values that identify the type of context.  At a minimum, the list MUST include a URN value drawn from the LIS vocabulary (see Appendix A). The assumed namespace of these URNs is the LIS vocabulary so TCs can use the handles when the intent is to refer to an LIS context type.  If the TC wants to include a context type from another namespace, a fully-qualified URN should be used. This parameter is optional.</td>
+</tr>
+<tr>
+<td>context_title</td>
+<td>A title of the context &#x2013; it should be about the length of a line. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>context_label</td>
+<td>A value for the context &#x2013; intended to fit in a column. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>launch_presentation_locale</td>
+<td>Language, country and variant as represented using the IETF Best Practices for Tags for Identifying Languages (BCP-47) available at <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt" target="_blank">http://www.rfc-editor.org/rfc/bcp/bcp47.txt</a></td>
+</tr>
+<tr>
+<td>launch_presentation_document_target</td>
+<td>The value should be either &#x2018;frame&#x2019;, &#x2018;iframe&#x2019; or &#x2018;window&#x2019;.  This field communicates the kind of browser window/frame where the TC has launched the tool. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>launch_presentation_width</td>
+<td>The width of the window or frame where the content from the tool will be displayed. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>launch_presentation_height</td>
+<td>The height of the window or frame where the content from the tool will be displayed. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>launch_presentation_return_url</td>
+<td>Fully qualified URL where the TP can redirect the user back to the TC interface.  This URL can be used once the TP is finished or if the TP cannot start or has some technical difficulty.  In the case of an error, the TP may add a parameter called lti_errormsg that includes some detail as to the nature of the error.  The lti_errormsg value should make sense if displayed to the user.  If the tool has displayed a message to the end user and only wants to give the TC a message to log, use the parameter lti_errorlog instead of lti_errormsg. If the tool is terminating normally, and wants a message displayed to the user it can include a text message as the lti_msg parameter to the return URL. If the tool is terminating normally and wants to give the TC a message to log, use the parameter lti_log. This data should be sent on the URL as a GET &#x2013; so the TP should take care to keep the overall length of the parameters small enough to fit within the limitations of a GET request. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>tool_consumer_instance_guid</td>
+<td>This is a unique identifier for the TC.  A common practice is to use the DNS of the organization or the DNS of the TC instance.  If the organization has multiple TC instances, then the best practice is to prefix the domain name with a locally unique identifier for the TC instance.  This parameter is recommended.</td>
+</tr>
+<tr>
+<td>tool_consumer_instance_name</td>
+<td>This is a user visible field &#x2013; it should be about the length of a column. This parameter is recommended.</td>
+</tr>
+<tr>
+<td>tool_consumer_instance_description</td>
+<td>This is a user visible field &#x2013; it should be about the length of a line. This parameter is optional.</td>
+</tr>
+<tr>
+<td>tool_consumer_instance_url</td>
+<td>This is the URL of the consumer instance.  This parameter is optional.</td>
+</tr>
+<tr>
+<td>tool_consumer_instance_contact_email</td>
+<td>An email contact for the TC instance. This parameter is recommended.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extractingvalidating-information-from-a-launch">Extracting/Validating Information from a launch</h3>
+<p>Often it&apos;s useful to extract values from an LTI message into a more meaningful representation.</p>
+<p>You can use <code>LtiMessageExtractorImpl</code> to make this easier:</p>
+<pre><code class="lang-java">HttpServlet request = ...;
+LtiMessageExtractorImpl extractor = <span class="hljs-keyword">new</span> LtiMessageExtractorImpl();
+
+LtiErrorable&lt;LtiMessage&gt; message = extractor.extractLtiMessage(request.getParameters());
+
+message.collapse(
+  message -&gt; {
+    <span class="hljs-comment">//success</span>
+    BasicLtiLaunchRequestMessage launch = (BasicLtiLaunchRequestMessage) message;
+    User user = launch.user();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ltiSuccess.jsp&quot;</span>;
+  },
+  errors -&gt; {
+    <span class="hljs-comment">// error</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ltiError.jsp&quot;</span>;
+  }
+);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="launch.html#signing" class="navigation navigation-next " aria-label="Next page: Signing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"The Launch","level":"1.2","depth":1,"next":{"title":"Signing","level":"1.2.1","depth":2,"anchor":"#signing","path":"launch.md","ref":"launch.md#signing","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LTI Java","gitbook":"*","description":"An LTI library for the JVM"},"file":{"path":"launch.md","mtime":"2018-04-01T02:18:30.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-01T16:54:48.689Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

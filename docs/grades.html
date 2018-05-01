@@ -1,0 +1,556 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Grades · LTI Java</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="grades.html" />
+    
+    
+    <link rel="prev" href="launch.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="launch.html">
+            
+                <a href="launch.html">
+            
+                    
+                    The Launch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="launch.html">
+            
+                <a href="launch.html#signing">
+            
+                    
+                    Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="launch.html">
+            
+                <a href="launch.html#signature-verification">
+            
+                    
+                    Signature Verification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="launch.html">
+            
+                <a href="launch.html#launch-parameters">
+            
+                    
+                    Launch Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="launch.html">
+            
+                <a href="launch.html#extractingvalidating-information-from-a-launch">
+            
+                    
+                    Extracting Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="grades.html">
+            
+                <a href="grades.html">
+            
+                    
+                    Grades
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="grades.html">
+            
+                <a href="grades.html#updating-grades">
+            
+                    
+                    Updating Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="grades.html">
+            
+                <a href="grades.html#reading-grades">
+            
+                    
+                    Reading Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="grades.html">
+            
+                <a href="grades.html#deleting-grades">
+            
+                    
+                    Deleting Grades
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="content.html">
+            
+                <a href="content.html">
+            
+                    
+                    Content
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Grades</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="grade-pass-back">Grade pass back</h1>
+<p>A common feature that learning tools provide is some form of assessment, in which a student generates an outcome, or grade. Often, it is desirable to have that outcome automatically populated back to the LMS&apos;s gradebook. Consumers can implement LTI outcomes to enable tools to do this.</p>
+<p>In the LTI launch, the consumer provides a url in the <code>lis_outcomes_service_url</code> parameter, along with a grade cell identifier in the <code>lis_result_sourced_id</code> parameter.
+Using this url, the provider can send an XML POST request, containing the grade cell identifier and the grade value. The request is signed by the provider (just like a launch request), except the request isn&apos;t sent by the user&apos;s client; it&apos;s sent from the provider directly (server to server). </p>
+<p>Along with sending a grade back, the provider can also <strong>read</strong> the current grade, and <strong>delete</strong> grades that were previously sent. The three types of requests that a provider can send are:</p>
+<p><code>replaceResultRequest</code> - update the current grade for the given cell id.
+<code>readResultRequest</code> - return the current grade for the given cell id.
+<code>deleteResultRequest</code> - remove the current grade for the given cell id.</p>
+<h3 id="updating-grades">Updating grades</h3>
+<p>When the provider wants to sync a grade back to the consumer, they can send a <code>replaceResultRequest</code>. Even though the name might suggest, the provider doesn&apos;t need to have already sent a grade to send a <code>replaceResultRequest</code>.</p>
+<p>The XML body of this request would look like:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeRequest</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">replaceResultRequest</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">resultRecord</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sourcedGUID</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">sourcedId</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-name">sourcedId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">sourcedGUID</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">resultScore</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">language</span>&gt;</span>en<span class="hljs-tag">&lt;/<span class="hljs-name">language</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">textString</span>&gt;</span>0.85<span class="hljs-tag">&lt;/<span class="hljs-name">textString</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">resultScore</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">result</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">resultRecord</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">replaceResultRequest</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeRequest</span>&gt;</span>
+</code></pre>
+<p>The <code>&lt;sourcedId&gt;3124567&lt;/sourcedId&gt;</code> is the value from the <code>lis_result_sourced_id</code> parameter that was received in the LTI launch. This value identifies a cell in a gradebook, so it&apos;s unique to the user and activity.</p>
+<p><em>Note: The grade is a decimal value between 1 and 0. If the provider&apos;s grades are not stored this way, they&apos;ll need to scale them, with 0 meaning the student didn&apos;t score any points, and 1 meaning the student scored all the available points. There is no mechanism for extra credit (TODO: How do the particular consumers deal with values outside of this range?).</em></p>
+<p><em>Note: the grade cell identifier is unique to the student and column, and even though the LTI outcomes standard says the <code>lis_outcomes_service_url</code> <em>should</em> remain the same across launches, there are a few consumers that don&apos;t follow that rule, so it&apos;s best to assume that it&apos;s different every time. Realistically, providers end up just storing the url alongside the grade cell identifier, and update it for every launch they receive.</em></p>
+<p>To send an update result request, you can create an instance of <code>ReadResultRequest</code>, and sign it using the <code>BasicOutcomesService</code></p>
+<pre><code class="lang-java">BasicOutcomesService service = <span class="hljs-keyword">new</span> BasicOutcomesServiceImpl();
+ReplaceResultRequest replace = <span class="hljs-keyword">new</span> ReplaceResultRequest(sourcedId, resultScore, messageId);
+
+Optional&lt;HttpPost&gt; req = service.signOutcomeMessage(replace);
+req.ifPresent(r -&gt; {
+    DefaultHttpClient client = <span class="hljs-keyword">new</span> DefaultHttpClient();  
+    HttpResponse response = client.execute(r);
+    <span class="hljs-comment">// do something with response...</span>
+});
+</code></pre>
+<p>The consumer will respond with an XML body that contains the status of the update:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeResponse</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>4560<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_codeMajor</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_codeMajor</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_severity</span>&gt;</span>status<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_severity</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>999999123<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>deleteResult<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">deleteResultResponse</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeResponse</span>&gt;</span>
+</code></pre>
+<h3 id="reading-grades">Reading grades</h3>
+<p>The provider can find out what grade the consumer has on record for a particular grade cell by sending a <code>readResultRequest</code> request.</p>
+<p>The provider POSTs an XML body which contains the grade cell identifier to the <code>lis_outcomes_service_url</code>, and the consumer sends a response with an XML body that contains the value it has on record for that grade cell.</p>
+<p>The body of the provider&apos;s request looks like: </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeRequest</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">readResultRequest</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">resultRecord</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sourcedGUID</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">sourcedId</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-name">sourcedId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">sourcedGUID</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">resultRecord</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">readResultRequest</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeRequest</span>&gt;</span>
+</code></pre>
+<p>You can create and sign ReadResult requests by using the <code>BasicOutcomesService</code>:</p>
+<pre><code class="lang-java">BasicOutcomesService service = <span class="hljs-keyword">new</span> BasicOutcomesServiceImpl();
+ReadResultRequest read = <span class="hljs-keyword">new</span> ReadResultRequest(messageId, sourcedId);
+
+Optional&lt;HttpPost&gt; req = service.signOutcomeMessage(read);
+req.ifPresent(r -&gt; {
+    DefaultHttpClient client = <span class="hljs-keyword">new</span> DefaultHttpClient();  
+    HttpResponse response = client.execute(r);
+    <span class="hljs-comment">// do something with response...</span>
+});
+</code></pre>
+<p>The consumer responds with an XML body containing the grade for that particular grade cell identifier:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeResponse</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>AA<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_codeMajor</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_codeMajor</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_severity</span>&gt;</span>status<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_severity</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_description</span>&gt;</span>Result read<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_description</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>readResult<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">readResultResponse</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">result</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">resultScore</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">language</span>&gt;</span>en<span class="hljs-tag">&lt;/<span class="hljs-name">language</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">textString</span>&gt;</span>0.85<span class="hljs-tag">&lt;/<span class="hljs-name">textString</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">resultScore</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">result</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">readResultResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeResponse</span>&gt;</span>
+</code></pre>
+<h3 id="deleting-grades">Deleting grades</h3>
+<p>The provider can delete grades by sending a <code>deleteResult</code> request to the <code>lti_outcomes_service_url</code> which the consumer sent in the LTI Launch.</p>
+<p>The <code>deleteResult</code> request is a POST made from the provider to the consumer with an XML body like:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeRequest</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXRequestHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">deleteResultRequest</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">resultRecord</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sourcedGUID</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">sourcedId</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-name">sourcedId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">sourcedGUID</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">resultRecord</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">deleteResultRequest</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeRequest</span>&gt;</span>
+</code></pre>
+<p>You can create and sign DeleteResult requests by using the <code>BasicOutcomesService</code>:</p>
+<pre><code class="lang-java">BasicOutcomesService service = <span class="hljs-keyword">new</span> BasicOutcomesServiceImpl();
+DeleteResultRequest del = <span class="hljs-keyword">new</span> DeleteResultRequest(messageId, sourcedId);
+
+Optional&lt;HttpPost&gt; req = service.signOutcomeMessage(del);
+req.ifPresent(r -&gt; {
+    DefaultHttpClient client = <span class="hljs-keyword">new</span> DefaultHttpClient();  
+    HttpResponse response = client.execute(r);
+    <span class="hljs-comment">// do something with response...</span>
+});
+</code></pre>
+<p>The consumer will respond with an xml body containing the status of the request:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXEnvelopeResponse</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms\_v1p0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_version</span>&gt;</span>V1.0<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_version</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>AB<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_codeMajor</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_codeMajor</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_severity</span>&gt;</span>status<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_severity</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_messageRefIdentifier</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>deleteResult<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_operationRefIdentifier</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_statusInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXResponseHeaderInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">deleteResultResponse</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXBody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">imsx_POXEnvelopeResponse</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="launch.html#extractingvalidating-information-from-a-launch" class="navigation navigation-prev " aria-label="Previous page: Extracting Information">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="grades.html#updating-grades" class="navigation navigation-next " aria-label="Next page: Updating Grades">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Grades","level":"1.3","depth":1,"next":{"title":"Updating Grades","level":"1.3.1","depth":2,"anchor":"#updating-grades","path":"grades.md","ref":"grades.md#updating-grades","articles":[]},"previous":{"title":"Extracting Information","level":"1.2.4","depth":2,"anchor":"#extractingvalidating-information-from-a-launch","path":"launch.md","ref":"launch.md#extractingvalidating-information-from-a-launch","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LTI Java","gitbook":"*","description":"An LTI library for the JVM"},"file":{"path":"grades.md","mtime":"2018-04-01T02:18:30.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-01T16:54:48.689Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
